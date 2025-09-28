@@ -6,12 +6,12 @@ use std::env;
 use sha2::{Sha256, Digest};
 use cargo_metadata::MetadataCommand;
 
-/// Entry point for `cargo repro`.
+/// Entry point for `cargo reproduce`.
 /// Right now we only support:
-/// - `cargo repro build [--strict]`
-/// - `cargo repro verify`
+/// - `cargo reproduce build [--strict]`
+/// - `cargo reproduce verify`
 fn main() {
-    // Skip the first two args: "cargo" and "repro"
+    // Skip the first two args: "cargo" and "reproduce"
     let mut args = env::args().skip(2);
 
     match args.next().as_deref() {
@@ -22,7 +22,7 @@ fn main() {
         }
         Some("verify") => repro_verify(),
         _ => {
-            eprintln!("Usage: cargo repro <build|verify> [--strict]");
+            eprintln!("Usage: cargo reproduce <build|verify> [--strict]");
             std::process::exit(1);
         }
     }
@@ -85,12 +85,12 @@ fn repro_verify() {
                 }
             }
             Err(_) => {
-                eprintln!("No repro-hash.txt found. Run `cargo repro build` first.");
+                eprintln!("No repro-hash.txt found. Run `cargo reproduce build` first.");
                 std::process::exit(1);
             }
         }
     } else {
-        eprintln!("Binary not found. Did you run `cargo repro build`?");
+        eprintln!("Binary not found. Did you run `cargo reproduce build`?");
         std::process::exit(1);
     }
 }
@@ -130,8 +130,8 @@ fn normalize_env(strict: bool) {
         rustflags.push_str(" -C debuginfo=0");
 
         if cfg!(target_os = "windows") {
-            // On MSVC, /Brepro removes timestamps from PE headers
-            rustflags.push_str(" -C link-arg=/Brepro");
+            // On MSVC, /Breproduce removes timestamps from PE headers
+            rustflags.push_str(" -C link-arg=/Breproduce");
         } else {
             // On LLD/GNU, disable build IDs and timestamps explicitly
             rustflags.push_str(" -C link-arg=-Wl,--build-id=none -C link-arg=-Wl,--no-insert-timestamp");
