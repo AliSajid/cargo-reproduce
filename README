@@ -24,7 +24,7 @@ Install from source:
 
 ```bash
 cargo install --path cargo-repro
-````
+```
 
 Build with reproducibility checks:
 
