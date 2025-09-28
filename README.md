@@ -29,13 +29,13 @@ cargo install --path cargo-reproduce
 Build with reproducibility checks:
 
 ```bash
-cargo repro build --strict
+cargo reproduce build --strict
 ```
 
 Later, verify the binary still matches:
 
 ```bash
-cargo repro verify
+cargo reproduce verify
 ```
 
 ---
@@ -45,12 +45,12 @@ cargo repro verify
 Two copies of the same crate in different directories:
 
 ```bash
-# In hello-repro/
-cargo repro build --strict
+# In hellotest/
+cargo reproduce build --strict
 # → Reproducible build hash: ca6c0316891aafd83ec99d245d9e7268246a628beda789e4cc0ba1ea75388bb2
 
-# In hello-repro-copy/
-cargo repro build --strict
+# In hellotestcopy/
+cargo reproduce build --strict
 # → Reproducible build hash: ca6c0316891aafd83ec99d245d9e7268246a628beda789e4cc0ba1ea75388bb2
 ```
 
