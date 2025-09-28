@@ -130,7 +130,7 @@ fn normalize_env(strict: bool) {
         rustflags.push_str(" -C debuginfo=0");
 
         if cfg!(target_os = "windows") {
-            // On MSVC, /Breproduce removes timestamps from PE headers
+            // On MSVC, /Brepro removes timestamps from PE headers
             rustflags.push_str(" -C link-arg=/Brepro");
         } else {
             // On LLD/GNU, disable build IDs and timestamps explicitly
