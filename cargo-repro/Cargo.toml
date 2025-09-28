@@ -1,11 +1,11 @@
 [package]
-name = "cargo-repro"
+name = "cargo-reproduce"
 version = "0.1.0"
 edition = "2024"
 authors = ["tommantonclery <tommantonclery@outlook.com>"]
 description = "A Cargo subcommand for reproducible Rust builds. Normalizes the build environment, strips nondeterministic metadata, and verifies bit-for-bit reproducibility."
 license = "MIT"
-repository = "https://github.com/tommantonclery/cargo-repro"
+repository = "https://github.com/tommantonclery/cargo-reproduce"
 readme = "README.md"
 keywords = ["cargo", "reproducible-builds", "deterministic", "security"]
 categories = ["development-tools::cargo-plugins", "development-tools", "security"]

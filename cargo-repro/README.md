@@ -1,6 +1,6 @@
-# cargo-repro
+# cargo-reproduce
 
-`cargo-repro` is a Cargo subcommand that helps you check if your Rust builds are **really reproducible**.  
+`cargo-reproduce` is a Cargo subcommand that helps you check if your Rust builds are **really reproducible**.  
 It sets up a consistent build environment, strips out things like timestamps and user paths, and then gives you a stable hash of the final binary.
 
 ---
@@ -23,7 +23,7 @@ This tool is an experiment to close that gap.
 Install from source:
 
 ```bash
-cargo install --path cargo-repro
+cargo install --path cargo-reproduce
 ````
 
 Build with reproducibility checks:
