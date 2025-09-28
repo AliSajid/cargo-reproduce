@@ -10,9 +10,9 @@ It sets up a consistent build environment, strips out things like timestamps and
 By default, Cargo builds are usually *deterministic* on the same machine, but not always *reproducible* across different machines or even different directories.  
 That means:
 
-- The same crate can produce slightly different binaries.  
-- It’s hard to prove that a binary you downloaded was built from the source it claims.  
-- Distros and companies who care about supply-chain security or compliance can’t rely on Cargo alone.  
+- The same crate can produce slightly different binaries
+- It’s hard to prove that a binary you downloaded was built from the source it claims
+- Distros and companies who care about supply-chain security or compliance can’t rely on Cargo alone
 
 This tool is an experiment to close that gap.
 
@@ -24,7 +24,7 @@ Install from source:
 
 ```bash
 cargo install --path cargo-repro
-```
+````
 
 Build with reproducibility checks:
 
