@@ -47,11 +47,11 @@ Two copies of the same crate in different directories:
 ```bash
 # In hello-repro/
 cargo repro build --strict
-# → Reproducible build hash: ca6c0316891aafd83ec99d245d9e7268246a628beda789e4cc0ba1ea75388bb2
+# -> Reproducible build hash: ca6c0316891aafd83ec99d245d9e7268246a628beda789e4cc0ba1ea75388bb2
 
 # In hello-repro-copy/
 cargo repro build --strict
-# → Reproducible build hash: ca6c0316891aafd83ec99d245d9e7268246a628beda789e4cc0ba1ea75388bb2
+# -> Reproducible build hash: ca6c0316891aafd83ec99d245d9e7268246a628beda789e4cc0ba1ea75388bb2
 ```
 
 Both builds give the **exact same hash** ✅. That’s reproducibility.
