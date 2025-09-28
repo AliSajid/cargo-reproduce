@@ -1,4 +1,3 @@
-
 # cargo-repro
 
 `cargo-repro` is a Cargo subcommand that helps you check if your Rust builds are **really reproducible**.  
