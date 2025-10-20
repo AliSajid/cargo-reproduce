@@ -160,13 +160,14 @@ fn get_package_name() -> String {
 
 /// Look for the built binary in target/release
 fn find_binary(bin_name: &str) -> Option<PathBuf> {
+    // Cargo preserves hyphens in binary filenames, so don't replace them
     let exe_name = if cfg!(windows) {
-        format!("{}.exe", bin_name.replace('-', "_"))
+        format!("{}.exe", bin_name)
     } else {
-        bin_name.replace('-', "_")
+        bin_name.to_string()
     };
 
-    let candidate = PathBuf::from("target/release").join(exe_name);
+    let candidate = PathBuf::from("target/release").join(&exe_name);
     if candidate.exists() {
         Some(candidate)
     } else {
